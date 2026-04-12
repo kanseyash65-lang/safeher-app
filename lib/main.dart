@@ -5,6 +5,7 @@ import 'package:vibration/vibration.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 import 'contacts_screen.dart';
 import 'fake_call_screen.dart';
+import 'map_screen.dart';
 import 'api_service.dart';
 
 void main() {
@@ -614,6 +615,9 @@ class _HomeScreenState extends State<HomeScreen>
           } else if (label == 'Fake\nCall') {
             Navigator.push(context,
                 MaterialPageRoute(builder: (_) => const FakeCallScreen()));
+          } else if (label == 'Share\nLocation') {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => const MapScreen()));
           }
         },
         child: Container(
@@ -674,6 +678,9 @@ class _HomeScreenState extends State<HomeScreen>
         if (index == 1) {
           Navigator.push(context,
               MaterialPageRoute(builder: (_) => const ContactsScreen()));
+        } else if (index == 2) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (_) => const MapScreen()));
         } else {
           setState(() => _selectedTab = index);
         }
